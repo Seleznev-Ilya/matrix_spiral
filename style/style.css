@@ -1,0 +1,21 @@
+table td{
+    padding: 33px 37px;
+    border: 1px dotted chocolate;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px lightblue;
+    font-size: 32px;
+    text-align: center;
+}
+td{
+    /*min-width: 112px;*/
+}
+#parentTable{
+    box-sizing: border-box;
+    overflow: hidden;
+    display: table;
+    margin: 3vh auto 0;
+    /*transform: translateY(-50%);*/
+    background-color: khaki;
+    border-radius: 7px;
+    box-shadow: 1px 1px 1px lightgoldenrodyellow;
+}
