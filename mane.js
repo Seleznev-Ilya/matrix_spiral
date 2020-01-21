@@ -74,10 +74,12 @@ let wrapping = () => {
         let lastTr = row - 1, lastTd = cell - 1;
         let r = 0, c = 0;
         let set = 1;
+        otsudava:
         while (r <= lastTr && c <= lastTd) {
 
             // TOP ++>
             for (let i = c; i <= lastTd; i++) {
+                if(set > cell * row) break otsudava;
                 let td = tr[r].getElementsByTagName('td');
                 td[i].textContent = set;
                 set++;
@@ -85,6 +87,7 @@ let wrapping = () => {
             r++;
             // RIGHT ++∨
             for (let i = r; i <= lastTr; i++) {
+                if(set > cell * row) break otsudava;
                 let td = tr[i].getElementsByTagName('td');
                 td[lastTd].textContent = set;
                 set++;
@@ -94,13 +97,15 @@ let wrapping = () => {
             if (r <= lastTr) {
                 // BOTTOM <--
                 for (let i = lastTd; i >= c; i--) {
+                    if(set > cell * row) break otsudava;
                     let td = tr[lastTr].getElementsByTagName('td');
                     td[i].textContent = set;
                     set++;
                 }
                 lastTr--;
-                // BOTTOM ∧--
+                // LEFT ∧--
                 for (let i = lastTr; i >= r; i--) {
+                    if(set > cell * row) break otsudava;
                     let td = tr[i].getElementsByTagName('td');
                     td[c].textContent = set;
                     set++;
